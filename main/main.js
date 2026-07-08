@@ -1,21 +1,49 @@
 //=============================== import API =================================
-import { sleep } from 'k6';
+import { check, sleep } from 'k6';
 import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
-import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3, UploadFile } from '../api/example.js';
+import { session } from '../api/session.js';
+import { address } from '../api/address.js';
+import { check_ } from '../api/check.js';
+import { getVisitList } from '../api/getVisitList.js';
+import { countTab } from '../api/countTab.js';
+import { serviceHospital } from '../api/serviceHospital.js';
+import { servicePoint } from '../api/servicePoint.js';
+import { personList } from '../api/personList.js';
+import { doctor } from '../api/doctor.js';
+import { calendar } from '../api/calendar.js';
+import { slot } from '../api/slot.js';
+import { createVisit } from '../api/createVisit.js';
+import { schedule } from '../api/schedule.js';
+import { scheduleList } from '../api/scheduleList.js';
+import { timeslotsByDate } from '../api/timeslotsByDate.js';
+import { drugTh } from '../api/drugTh.js';
+import { createDiagnosis } from '../api/createDiagnosis.js';
+
 
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  response = GetProfile()
-  //response = PostProfile()
-  //response = PostProfile_2()
-  //response = PostProfile_3(scenario)
-  //response = DownloadFile()
-  //response = UploadFile()
-  //response = UploadFile_2()
+
+  //response = session()
+  //response = address()
+  //response = check_()
+  //response = getVisitList()
+  //response = countTab()
+  //response = serviceHospital()
+  //response = servicePoint()
+  //response = personList()
+  //response = doctor()
+  //response = calendar()
+  //esponse = slot()
+  //response = createVisit()
+  //response = schedule()
+  //response = scheduleList()
+  //response = timeslotsByDate()
+  //response = drugTh()
+  //response = createDiagnosis()
 
 
   error_check(response);
