@@ -1,4 +1,5 @@
 import http from 'k6/http';
+import { cookie } from './env.js';
 
 export function createDiagnosis() {
     const url = 'https://uat-dtamnext.one.th/api/v1/visits/create-diagnosis';
@@ -63,7 +64,7 @@ export function createDiagnosis() {
     };
 
     const headers = {
-        Cookie: 'session=a5f32e63-1c59-4740-908c-98a7fbc73d16',
+        Cookie: '' + cookie,
     };
 
     const response = http.post(url, payload, {

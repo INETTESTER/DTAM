@@ -1,4 +1,5 @@
 import http from 'k6/http';
+import { cookie } from './env.js';
 
 export function schedule() {
     const url = 'https://uat-dtamnext.one.th/api/v1/slot/config/schedule';
@@ -16,7 +17,7 @@ export function schedule() {
     });
 
     const headers = {
-        Cookie: 'session=a5f32e63-1c59-4740-908c-98a7fbc73d16',
+        Cookie: '' + cookie,
         'Content-Type': 'application/json',
     };
 
