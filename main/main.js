@@ -37,7 +37,7 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = personList()
   //response = doctor()
   //response = calendar()
-  //esponse = slot()
+  //response = slot()
   //response = createVisit()
   //response = schedule()
   //response = scheduleList()

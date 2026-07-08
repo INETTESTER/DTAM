@@ -11,7 +11,7 @@ export function calendar() {
         headers,
     });
 
-    console.log(`Response body: ${response.body}`);
+    //console.log(`Response body: ${response.body}`);
 
     return response;
 }

@@ -24,7 +24,7 @@ export function schedule() {
         headers,
     });
 
-    console.log(`Response body: ${response.body}`);
+    //console.log(`Response body: ${response.body}`);
 
     return response;
 }
