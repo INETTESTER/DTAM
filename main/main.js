@@ -53,6 +53,8 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = timeslotsByDate()
   //response = drugTh()
   //response = createDiagnosis()
+  
+  //----------------- เพิ่มมาใหม่ ----------------------------
   //response = dropdown_user()
   //response = hospital_config()
   //response = procedure_th()
