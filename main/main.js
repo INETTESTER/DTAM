@@ -19,6 +19,15 @@ import { scheduleList } from '../api/scheduleList.js';
 import { timeslotsByDate } from '../api/timeslotsByDate.js';
 import { drugTh } from '../api/drugTh.js';
 import { createDiagnosis } from '../api/createDiagnosis.js';
+import { dropdown_user } from '../api/dropdown_user.js';
+import { hospital_config } from '../api/hospital_config.js';
+import { procedure_th } from '../api/procedure_th.js';
+import { drug_unit } from '../api/drug_unit.js';
+import { icd } from '../api/icd.js';
+import { hospital_list } from '../api/hospital_list.js';
+import { get_diagnosis } from '../api/get_diagnosis.js';
+import { detail } from '../api/detail.js';
+import { history } from '../api/history.js';
 
 
 
@@ -44,6 +53,15 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = timeslotsByDate()
   //response = drugTh()
   //response = createDiagnosis()
+  //response = dropdown_user()
+  //response = hospital_config()
+  //response = procedure_th()
+  //response = drug_unit()
+  //response = icd()
+  //response = hospital_list()
+  //response = get_diagnosis()
+  //response = detail()
+  //response = history()
 
 
   error_check(response);
