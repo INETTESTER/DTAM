@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { cookie } from './env.js';
+import { cookie, timeout } from './env.js';
 
 export function calendar() {
     const url = 'https://uat-dtamnext.one.th/api/v1/slot/calendar?uid=31&month=2026-07';
@@ -10,6 +10,7 @@ export function calendar() {
 
     const response = http.get(url, {
         headers,
+        timeout: timeout,
     });
 
     //console.log(`Response body: ${response.body}`);

@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { cookie } from './env.js';
+import { cookie, timeout } from './env.js';
 
 export function hospital_list() {
     const url = 'https://uat-dtamnext.one.th/api/v1/dropdown/hospital-list?search=&limit=20&search_arr=';
@@ -8,6 +8,7 @@ export function hospital_list() {
         headers: {
             Cookie: '' + cookie,
         },
+        timeout: timeout,
     };
 
     const response = http.get(url, params);

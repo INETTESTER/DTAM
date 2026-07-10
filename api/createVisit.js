@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { cookie } from './env.js';
+import { cookie, timeout } from './env.js';
 
 export function createVisit() {
     const url = 'https://uat-dtamnext.one.th/api/v1/visits/create-visit';
@@ -26,6 +26,7 @@ export function createVisit() {
 
     const response = http.post(url, payload, {
         headers,
+        timeout: timeout,
     });
 
     //console.log(`Response body: ${response.body}`);

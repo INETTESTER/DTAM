@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { cookie } from './env.js';
+import { cookie, timeout } from './env.js';
 
 export function serviceHospital() {
     const url = 'https://uat-dtamnext.one.th/api/v1/visits/dropdown/service-hospital?mode=booking';
@@ -10,6 +10,7 @@ export function serviceHospital() {
 
     const response = http.get(url, {
         headers,
+        timeout: timeout,
     });
 
     //console.log(`Response body: ${response.body}`);

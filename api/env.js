@@ -1,1 +1,2 @@
 export const cookie = 'session=5a8f489b-704a-4eb0-b50a-ba5b3b29ec7e'
+export const timeout = "300s";

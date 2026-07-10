@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { cookie } from './env.js';
+import { cookie, timeout } from './env.js';
 
 export function createDiagnosis() {
     const url = 'https://uat-dtamnext.one.th/api/v1/visits/create-diagnosis';
@@ -69,6 +69,7 @@ export function createDiagnosis() {
 
     const response = http.post(url, payload, {
         headers,
+        timeout: timeout,
     });
 
     //console.log(`Response body: ${response.body}`);
