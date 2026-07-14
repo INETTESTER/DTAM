@@ -28,6 +28,7 @@ import { hospital_list } from '../api/hospital_list.js';
 import { get_diagnosis } from '../api/get_diagnosis.js';
 import { detail } from '../api/detail.js';
 import { history } from '../api/history.js';
+import { title } from '../api/title.js';
 
 
 
@@ -64,6 +65,9 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = get_diagnosis()
   //response = detail()
   //response = history()
+
+  //----------------- เพิ่มมาใหม่ ----------------------------
+  response = title()
 
 
   error_check(response);
