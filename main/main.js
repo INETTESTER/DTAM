@@ -29,6 +29,14 @@ import { get_diagnosis } from '../api/get_diagnosis.js';
 import { detail } from '../api/detail.js';
 import { history } from '../api/history.js';
 import { title } from '../api/title.js';
+import { bornTime } from '../api/bornTime.js';
+import { nationality } from '../api/nationality.js';
+import { mstatus } from '../api/mstatus.js';
+import { Profile } from '../api/Profile.js';
+import { home } from '../api/home.js';
+import { rights } from '../api/rights.js';
+import { hospitalList } from '../api/hospitalList.js';
+
 
 
 
@@ -67,7 +75,15 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = history()
 
   //----------------- เพิ่มมาใหม่ ----------------------------
-  response = title()
+  //response = title()
+  //response = bornTime()
+  //response = nationality()
+  //response = mstatus()
+  //response = Profile()
+  //response = home()
+  //response = rights()
+  //response = hospitalList()
+
 
 
   error_check(response);

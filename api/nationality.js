@@ -1,8 +1,8 @@
 import http from 'k6/http';
 import { cookie, timeout } from './env.js';
 
-export function title() {
-    const url = 'https://uat-dtamnext.one.th/api/v1/dropdown/title';
+export function nationality() {
+    const url = 'https://uat-dtamnext.one.th/api/v1/dropdown/nationality';
 
     const headers = {
         Cookie: '' + cookie,

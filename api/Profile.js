@@ -1,11 +1,11 @@
 import http from 'k6/http';
-import { cookie, timeout } from './env.js';
+import { cookie_app, timeout } from './env.js';
 
-export function title() {
-    const url = 'https://uat-dtamnext.one.th/api/v1/dropdown/title';
+export function Profile() {
+    const url = 'https://uat-dtamnext.one.th/api/v1/person-app/profile';
 
     const headers = {
-        Cookie: '' + cookie,
+        Cookie: '' + cookie_app,
     };
 
     const response = http.get(url, {
