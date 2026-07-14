@@ -36,6 +36,17 @@ import { Profile } from '../api/Profile.js';
 import { home } from '../api/home.js';
 import { rights } from '../api/rights.js';
 import { hospitalList } from '../api/hospitalList.js';
+import { booked } from '../api/booked.js';
+import { screening } from '../api/screening.js';
+import { conferenceScreening } from '../api/conferenceScreening.js';
+import { province } from '../api/province.js';
+import { district } from '../api/district.js';
+import { subdistrict } from '../api/subdistrict.js';
+import { hoscode } from '../api/hoscode.js';
+import { adjustPerson } from '../api/adjustPerson.js';
+import { history_ } from '../api/history_.js';
+import { list } from '../api/list.js';
+import { notification } from '../api/notification.js';
 
 
 
@@ -45,44 +56,55 @@ import { hospitalList } from '../api/hospitalList.js';
 
 export default function () {    //เรียกใช้ API ใน export default function
 
-  //response = session()
-  //response = address()
-  //response = check_()
-  //response = getVisitList()
-  //response = countTab()
-  //response = serviceHospital()
-  //response = servicePoint()
-  //response = personList()
-  //response = doctor()
-  //response = calendar()
-  //response = slot()
-  //response = createVisit()
-  //response = schedule()
-  //response = scheduleList()
-  //response = timeslotsByDate()
-  //response = drugTh()
-  //response = createDiagnosis()
-  
-  //----------------- เพิ่มมาใหม่ ----------------------------
-  //response = dropdown_user()
-  //response = hospital_config()
-  //response = procedure_th()
-  //response = drug_unit()
-  //response = icd()
-  //response = hospital_list()
-  //response = get_diagnosis()
-  //response = detail()
-  //response = history()
+  //response = session()              // 1
+  //response = address()              // 2
+  //response = check_()               // 3
+  //response = getVisitList()         // 4
+  //response = countTab()             // 5
+  //response = serviceHospital()      // 6
+  //response = servicePoint()         // 7
+  //response = personList()           // 8
+  //response = doctor()               // 9
+  //response = calendar()             // 10
+  //response = slot()                 // 11
+  //response = createVisit()          // 12
+  //response = schedule()              // 13
+  //response = scheduleList()          // 14
+  //response = timeslotsByDate()       // 15
+  //response = drugTh()                // 16
+  //response = createDiagnosis()       // 17
 
   //----------------- เพิ่มมาใหม่ ----------------------------
-  //response = title()
-  //response = bornTime()
-  //response = nationality()
-  //response = mstatus()
-  //response = Profile()
-  //response = home()
-  //response = rights()
-  //response = hospitalList()
+  //response = dropdown_user()         // 18
+  //response = hospital_config()       // 19
+  //response = procedure_th()          // 20
+  //response = drug_unit()             // 21
+  //response = icd()                   // 22
+  //response = hospital_list()         // 23
+  //response = get_diagnosis()         // 24
+  //response = detail()                // 25
+  //response = history()               // 26
+
+  //----------------- เพิ่มมาใหม่ ----------------------------
+  //response = title()                 // 27
+  //response = bornTime()              // 28
+  //response = nationality()            // 29
+  //response = mstatus()                // 30
+  //response = Profile()                // 31
+  //response = home()                   // 32
+  //response = rights()                 // 33
+  //response = hospitalList()           // 34
+  //response = booked()                 // 35
+  //response = screening()              // 36
+  //response = conferenceScreening()    // 37
+  //response = province()               // 38
+  //response = district()               // 39
+  //response = subdistrict()            // 40
+  //response = hoscode()                // 41
+  //response = adjustPerson()           // 42
+  //response = history_()               // 43
+  //response = list()                   // 44
+  //response = notification()           // 45
 
 
 

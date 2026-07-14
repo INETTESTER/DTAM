@@ -1,0 +1,40 @@
+import http from 'k6/http';
+import { cookie, cookie_app, timeout } from './env.js';
+
+export function adjustPerson() {
+    const url = 'https://uat-dtamnext.one.th/api/v1/person/adjust-person';
+
+    const headers = {
+        Cookie: '' + cookie + '; ' + cookie_app,
+        'Content-Type': 'application/json',
+    };
+
+    const payload = JSON.stringify({
+        "pid": 46,
+        "cid": "1100801374534",
+        "title_id": "003",
+        "first_name": "กิตติพิชญ์",
+        "last_name": "จันทร์เปรม",
+        "sex": "1",
+        "birth": "2000-11-17",
+        "nation_id": null,
+        "house_number": "1",
+        "address_detail": "ใต้ถุน",
+        "blood_group": null,
+        "address_id": "37",
+        "vill_no": "0",
+        "mobile": null,
+        "mobile_contact": null,
+        "mstatus": "9",
+        "born_time": "6",
+        "zip_code": "10330"
+    });
+
+    const response = http.put(url, payload, {
+        headers,
+        timeout: timeout,
+    });
+
+    //console.log(response.body);
+    return response;
+}
