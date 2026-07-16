@@ -47,6 +47,7 @@ import { adjustPerson } from '../api/adjustPerson.js';
 import { history_ } from '../api/history_.js';
 import { list } from '../api/list.js';
 import { notification } from '../api/notification.js';
+import { Registers } from '../api/Registers.js';
 
 
 
@@ -105,6 +106,7 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = history_()               // 43
   //response = list()                   // 44
   //response = notification()           // 45
+  response = Registers()
 
 
 
