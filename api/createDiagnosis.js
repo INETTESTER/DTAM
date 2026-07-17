@@ -1,78 +1,83 @@
 import http from 'k6/http';
 import { cookie, timeout } from './env.js';
+import { SharedArray } from 'k6/data'; ///POST กรณี id ไม่ซ้ำ (ดึง id จากไฟล์ json)
+const data = new SharedArray('pid2', function () { ///POST กรณี id ไม่ซ้ำ (ดึง id จากไฟล์ json)
+    return JSON.parse(open('../file/data2.json')).pid; ///POST กรณี id ไม่ซ้ำ (ดึง id จากไฟล์ json)
+});
 
-export function createDiagnosis() {
+
+export function createDiagnosis(scenario) {
+    const pid = data[scenario.iterationInTest];
     const url = 'https://uat-dtamnext.one.th/api/v1/visits/create-diagnosis';
 
     const payload = {
-        is_draft: "true",
-        visit_id: "26c9f913-c777-4591-adae-91ff1d70e62b",
-        diagnosis_id: "375b064c-79eb-11f1-9104-506b8da113d6",
-        service_id: "3549cda2-fa1c-430f-9543-6646b87f394d",
-        service_point_id: "6fdbd047-d926-4561-b9a2-801ad4d35f14",
-        is_objective: "1",
-        weight: "36",
-        height: "180",
-        waistline: "37",
-        body_temperature: "36",
-        pulse: "80",
-        respiration: "70",
-        pressure: "100/80",
-        FBS: "10",
-        BMI: "11.11",
-        present_illness: "ทดสอบโหลดเทส",
-        physical_examination: "ทดสอบโหลดเทส",
-        icd_code: '["U5130","U5141"]',
-        icd_code_secondary: '["U503"]',
-        icd_code_comorbidity: '["U503","U505"]',
+        is_draft: 'true',
+        visit_id: pid,
+        diagnosis_id: '',
+        service_id: '2561c6f2-d2af-4953-a48a-8a7e81edc9fd',
+        service_point_id: '6fdbd047-d926-4561-b9a2-801ad4d35f14',
+        is_objective: '1',
+        weight: '',
+        height: '123',
+        waistline: '',
+        body_temperature: '',
+        pulse: '',
+        respiration: '',
+        pressure: '',
+        FBS: '',
+        BMI: '',
+        present_illness: 'fsaf',
+        physical_examination: '',
+        icd_code: '[]',
+        icd_code_secondary: '[]',
+        icd_code_comorbidity: '[]',
         icd_code_complication: '[]',
         icd_code_other: '[]',
-        external_cause: "",
-        ruling: "U51.30 โลหิตระดูร้าง, U51.41 โลหิตระดูแห้งไป",
-        cause_of_symptoms: '["ความร้อน-ความเย็น","ความโกรธ"]',
-        cause_of_symptoms_other: "",
-        summary_of_sickness: "ทดสอบโหลดเทส",
-        four_elements_diagnosis: "ทดสอบโหลดเทส",
-        important_symptoms: "ทดสอบโหลดเทส",
-        history_present_illness: "ทดสอบโหลดเทส",
-        past_medical_history: "ทดสอบโหลดเทส",
-        social_history: "ทดสอบโหลดเทส",
-        family_history: "ทดสอบโหลดเทส",
-        review_of_system: "ทดสอบโหลดเทส",
-        duration: "ทดสอบโหลดเทส",
-        pregnancy_status: "ไม่ตั้งครรภ์",
-        is_treatment_plan: "0",
-        treatment_plan: "",
-        treatment_plan_detail: "",
-        follow_up: "",
-        next_appointment_date: "",
-        appointment_reason: "",
-        is_drug_allergy: "0",
-        drug_allergies: "[]",
-        is_procedure: "0",
-        procedure: "[]",
-        taking_procedure: "",
-        taking_procedure_date: "",
-        taking_procedure_location_code: "",
-        is_medicine: "1",
-        medicine: '[{"drugname":"ขมิ้นชัน","drugcode":"410000000100000020110662","amount":"2","unitsell":"035","to_use":"ทดสอบโหลดเทส","note":"ทดสอบโหลดเทส","date_serv":"2026-07-07"}]',
-        taking_medicine: "รับยาเรียบร้อย",
-        taking_medicine_date: "2026-07-07",
-        taking_medicine_location_code: "00000",
-        drug_transport_detail: "[]",
-        delived_address: "{}",
+        external_cause: '',
+        ruling: '',
+        cause_of_symptoms: '[]',
+        cause_of_symptoms_other: '',
+        summary_of_sickness: '12',
+        four_elements_diagnosis: 'dafa',
+        important_symptoms: 'เทสเทส',
+        history_present_illness: 'd',
+        past_medical_history: '',
+        social_history: 'fsdf',
+        family_history: 'fs',
+        review_of_system: 'fsd',
+        duration: '',
+        pregnancy_status: '',
+        is_treatment_plan: '0',
+        treatment_plan: '',
+        treatment_plan_detail: '',
+        follow_up: '',
+        next_appointment_date: '',
+        appointment_reason: '',
+        is_drug_allergy: '0',
+        drug_allergies: '[]',
+        is_procedure: '0',
+        procedure: '[]',
+        taking_procedure: '',
+        taking_procedure_date: '',
+        taking_procedure_location_code: '',
+        is_medicine: '0',
+        medicine: '[]',
+        taking_medicine: '',
+        taking_medicine_date: '',
+        taking_medicine_location_code: '',
+        drug_transport_detail: '[]',
+        delived_address: '{}',
     };
 
-    const headers = {
-        Cookie: '' + cookie,
+    const params = {
+        headers: {
+            Cookie: '' + cookie,
+        },
     };
 
-    const response = http.post(url, payload, {
-        headers,
-        timeout: timeout,
-    });
+    const response = http.post(url, payload, params);
 
-    //console.log(`Response body: ${response.body}`);
+    //console.log('Response body:', response.body);
 
     return response;
 }

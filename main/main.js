@@ -74,7 +74,7 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = scheduleList()          // 14
   //response = timeslotsByDate()       // 15
   //response = drugTh()                // 16
-  //response = createDiagnosis()       // 17
+  //response = createDiagnosis(scenario)       // 17
 
   //----------------- เพิ่มมาใหม่ ----------------------------
   //response = dropdown_user()         // 18
