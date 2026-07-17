@@ -1,7 +1,12 @@
 import http from 'k6/http';
 import { cookie, cookie_app, timeout } from './env.js';
+import { SharedArray } from 'k6/data'; ///POST กรณี id ไม่ซ้ำ (ดึง id จากไฟล์ json)
+const data = new SharedArray('pid', function () { ///POST กรณี id ไม่ซ้ำ (ดึง id จากไฟล์ json)
+    return JSON.parse(open('../file/data.json')).pid; ///POST กรณี id ไม่ซ้ำ (ดึง id จากไฟล์ json)
+});
 
-export function adjustPerson() {
+export function adjustPerson(scenario) {
+    const pid = data[scenario.iterationInTest];
     const url = 'https://uat-dtamnext.one.th/api/v1/person/adjust-person';
 
     const headers = {
@@ -10,11 +15,10 @@ export function adjustPerson() {
     };
 
     const payload = JSON.stringify({
-        "pid": 46,
-        "cid": "1100801374534",
+        "pid": pid,
         "title_id": "003",
-        "first_name": "กิตติพิชญ์",
-        "last_name": "จันทร์เปรม",
+        "first_name": "สมหญิง",
+        "last_name": "ใจดีจัง",
         "sex": "1",
         "birth": "2000-11-17",
         "nation_id": null,
@@ -35,6 +39,5 @@ export function adjustPerson() {
         timeout: timeout,
     });
 
-    //console.log(response.body);
     return response;
 }

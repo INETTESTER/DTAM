@@ -54,6 +54,9 @@ export function person() {
     };
 
     const response = http.post(url, payload, params);
+    if (response.status == 400) {
+        console.log('Response body:', response.body);
+    }
 
     //console.log('Response body:', response.body);
 

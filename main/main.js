@@ -103,7 +103,7 @@ export default function () {    //เรียกใช้ API ใน export def
   //response = district()               // 39
   //response = subdistrict()            // 40
   //response = hoscode()                // 41
-  //response = adjustPerson()           // 42
+  //response = adjustPerson(scenario)   // 42
   //response = history_()               // 43
   //response = list()                   // 44
   //response = notification()           // 45
