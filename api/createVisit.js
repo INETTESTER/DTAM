@@ -5,11 +5,11 @@ export function createVisit() {
     const url = 'https://uat-dtamnext.one.th/api/v1/visits/create-visit';
 
     const payload = JSON.stringify({
-        uid: "31",
-        pid: "35",
-        visit_date: "2026-07-10",
-        visit_start_time: "09:30:00",
-        visit_end_time: "10:00:00",
+        uid: "27",
+        pid: "45",
+        visit_date: "2026-07-16",
+        visit_start_time: "18:30:00",
+        visit_end_time: "19:00:00",
         service_type: "online",
         email: "test@gmail.com",
         phone: null,

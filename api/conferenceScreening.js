@@ -5,7 +5,7 @@ export function conferenceScreening() {
     const url = 'https://uat-dtamnext.one.th/api/v1/patient/conference-screening';
 
     const headers = {
-        Cookie: '' + cookie_app,
+        Cookie: 'session_app=be827d85-8e04-45d6-b29d-7cea74af08f9',
     };
 
     const response = http.get(url, {
